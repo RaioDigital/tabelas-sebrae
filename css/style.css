@@ -1,0 +1,51 @@
+.container {
+  max-width: max-content;
+  max-height: max-content;
+}
+
+table,
+td,
+th {
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 100%;
+  border: solid 1px #fff;
+  border-radius: 10px;
+  border-color: #fff;
+  padding: 5px 5px 5px 5px;
+  margin-top: 15px;
+  background-color: #431350;
+  color: #fff;
+  font-size: 15px;
+}
+
+th {
+  text-align: center;
+  background-color: #2c005b;
+}
+
+.table .thead-dark th {
+  color: #fff;
+  border-color: #fff;
+}
+
+/*
+caption {
+    font-size:x-large;
+}
+
+colgroup {
+    background:#F60;
+}
+
+.coluna1 {
+    background:#F66;
+}
+
+.coluna2  {
+    background:#F33;
+}
+
+.coluna3  {
+    background:#F99;
+}
+*/
