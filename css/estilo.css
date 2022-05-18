@@ -1,14 +1,22 @@
-.container{
-  text-align: center;
+body {  
+  background-color:	#00BFFF;
+  
+  background-repeat: no-repeat;
 }
 
-h1{
-font-size: 30px;
-border-radius: 5px;
-padding: 10px;
-margin-top: 10px;
-background-color: #2c005b;  
-color: #fff
+.container {
+  text-align: center;
+  align-items: center;
+  background-size: auto;
+}
+
+h1 {
+  font-size: 30px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #000080;
+  color: #fff;
 }
 
 select {
@@ -19,7 +27,7 @@ select {
   font-family: Arial, Helvetica, sans-serif;
   font-size: x-large;
   cursor: inherit;
-  line-height: inherit;  
+  line-height: inherit;
   position: relative;
   outline: none;
   text-align: center;
