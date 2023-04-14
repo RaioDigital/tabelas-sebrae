@@ -1,9 +1,9 @@
 body {  
-  background-image: url("/img/bg-PageRaio.png");  background-position: 30% 45%;
+  background-image: url("/img/fundocinza-raiodigital.png"); 
+  background-repeat: no-repeat;  
   background-size: cover;
-  
-  
-  
+  background-position: auto;
+  /*background-position: 30% 45%;*/
 }
 
 .container {
