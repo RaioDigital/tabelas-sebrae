@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link
+  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootsdivap@4.6.1/dist/css/bootsdivap.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <title>TESTES DE CAMPOS</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Formulário</h1>
+    <form id="form" class="form"> 
+
+        <div class="cnpj">
+          <label>CNPJ</label><br>
+          <input id="cnpj" type="text" onblur="checkCnpj(this.value)" data-mask="00.000.000/0000-00" class="form-control" required="required">
+        </div>
+
+        <div class="cpf">
+          <label>CPF</label><br>
+          <input id="cpf" type="text" onblur="checkCnpj(this.value)" data-mask="000.000.000-00" class="form-control" required="required">
+        </div>
+
+    </form>
+
+    <!--
+      <button id="button_salvar" type="button">Verificar</button>
+    -->   
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+
+  <script>
+     /*00.360.305/0001-04*/
+    function checkCnpj(cnpj) {
+      $.ajax({
+        'url':'https://receitaws.com.br/v1/cnpj/'+cnpj.replace(/[^0-9]/g, ''),
+        'type': "GET",
+        'dataType': 'jsonp',
+
+        'success': function(data){          
+          if(data.cnpj === undefined){
+            alert(data.status + ' - De acordo com RECEITA FEDERAL este é um ' + data.message)
+            $("#cnpj").val("");
+            $("#cnpj").focus();
+          } else {
+            document.getElementById('cnpj').value = data.cnpj;
+            alert(data.status + ' - De acordo com RECEITA FEDERAL esse CNPJ está ATIVO por ' + data.nome)
+            $("#cpf").focus();
+          }
+          console.log(data);
+        }
+
+      })
+    }
+
+  </script>
+
+</body>
+</html>
+

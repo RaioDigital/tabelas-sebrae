@@ -3,6 +3,8 @@ body {
   background-repeat: no-repeat;  
   background-size: cover;
   background-position: auto;
+  width: 100vw;
+  
   /*background-position: 30% 45%;*/
 }
 
